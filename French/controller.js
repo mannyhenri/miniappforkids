@@ -34,7 +34,6 @@ function addNewFriend() {
         console.log("Items in localstorage");
         names = JSON.parse(localStorage.getItem("names"));
         names.push(newName);
-        
     }
     
     localStorage.setItem("names", JSON.stringify(names));

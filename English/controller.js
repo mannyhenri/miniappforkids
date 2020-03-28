@@ -1,5 +1,5 @@
 const friends = JSON.parse(localStorage.getItem("names"));
-// const friends = ['Gerry', 'Manny', 'Kim'];
+// const friends = ['Gerry', 'Manny', 'Kim']; // show also let vs const
 
 function getFriends(item) {
     document.getElementById("card").innerHTML +=
@@ -34,7 +34,6 @@ function addNewFriend() {
         console.log("Items in localstorage");
         names = JSON.parse(localStorage.getItem("names"));
         names.push(newName);
-
     }
 
     localStorage.setItem("names", JSON.stringify(names));
