@@ -23,17 +23,22 @@ friends.forEach(getFriends);
 // };
 
 function addNewFriend() {
-    const newName = document.getElementById("fname") + document.getElementById("lname");
-    const names = [];
-    
-    if (localStorage.getItem("names") === !null) {
-        names = JSON.parse(localStorage.getItem("names"));
+    let first = document.getElementById("fname");
+    let last = document.getElementById("lname");
+    let newName = `${first.value} ${last.value}`;
+    let names = [];
+
+    if (localStorage.getItem("names") === null) {
         names.push(newName);
     } else {
+        console.log("Items in localstorage");
+        names = JSON.parse(localStorage.getItem("names"));
         names.push(newName);
+        
     }
-
+    
     localStorage.setItem("names", JSON.stringify(names));
+    location.reload();
 };
 
 // startDB();
